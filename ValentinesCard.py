@@ -24,14 +24,31 @@ class Heart:
         pygame.draw.circle(surface, self.color, right_circle_center, 20)
         pygame.draw.polygon(surface, self.color, triangle_points)
 
+class Flower:
+    def __init__(self, x, y, color):
+        self.x = x
+        self.y = y
+        self.color = color
+    
+    def draw(self, surface):
+        left_circle_center = (self.x - 20, self.y)
+        right_circle_center = (self.x + 20, self.y)
+        triangle_points = [(self.x - 40, self.y + 5),
+                           (self.x + 40, self.y + 5),
+                           (self.x, self.y + 50)]
+        
+        pygame.draw.circle(surface, self.color, left_circle_center, 20)
+        pygame.draw.circle(surface, self.color, right_circle_center, 20)
+        pygame.draw.polygon(surface, self.color, triangle_points)
+
 # Create instances of Heart
 heart1 = Heart(100, 200, (250, 0, 0))
 heart2 = Heart(300, 200, (250, 0, 0))  # You can ask students to change positions and colors
 heart3 = Heart(500, 200, (250, 0, 0))
 heart4 = Heart(700, 200, (250, 0, 0))
-heart5 = Heart(200, 200, (250, 0, 0))  
-heart6 = Heart(400, 200, (250, 0, 0))
-heart7 = Heart(600, 200, (250, 0, 0))
+heart5 = Heart(200, 200, (255, 182, 193))  
+heart6 = Heart(400, 200, (255, 182, 193))
+heart7 = Heart(600, 200, (255, 182, 193))
 
 # Draw everything
 heart1.draw(screen)
